@@ -1,12 +1,30 @@
 def presentar_menu():
+    MENU_OPCIONES = (
+        "1 - Cálculo del total",
+        "2 - Cálculo del descuento del 10%",
+        "3 - Cálculo del IVA del 15%",
+        "4 - Cálculo del Total menos dscto y más IVA",
+        "5 - Reporte",
+        "0 - Salir del programa"        
+    )
     print("--------------------------------------------------")
     print("Menú de cálculos")
-    print("\t1 - Cálculo del total")
-    print("\t2 - Cálculo del descuento del 10%")
-    print("\t3 - Cálculo del IVA del 15%")
-    print("\t4 - Cálculo del Total menos dscto y más IVA")
-    print("\t5 - Reporte")
-    print("\t0 - Salir del programa")
+    for opcion in MENU_OPCIONES:
+        print(f"\t{opcion}")
+    print("--------------------------------------------------")
+
+def presentar_menu_principal():
+    MENU_OPCIONES = (
+        "1 - Consultar la lista de productos",
+        "2 - Consultar un producto por código",
+        "3 - Ingreso de un nuevo producto",
+        "4 - Borrado de un producto"
+        "5 - Modificar un producto"
+        "0 - Salir"
+    )
+    print("-------------  MENU PRINCIPAL  -------------------")
+    for opcion in MENU_OPCIONES:
+        print(f"\t{opcion}")
     print("--------------------------------------------------")
 
 def presentar_producto(producto):
