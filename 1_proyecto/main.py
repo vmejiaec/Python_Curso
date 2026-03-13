@@ -7,6 +7,7 @@ def main():
     print("Ingrese los siguientes datos:")
     producto_nombre =  input("\tNombre: ")
     producto_codigo = input("\tCódigo: ")
+    producto_es_preferencial = input("\tEs preferencial? (S/N): ")
     producto_cantidad = int(input("\tCantidad: "))
     producto_precio = Decimal(input("\tPrecio: "))
     print("------------------------")
@@ -32,12 +33,19 @@ def main():
         PORC_DSCTO = Decimal("0.1")
         PORC_IVA = Decimal("0.15")
         total = producto_cantidad * producto_precio
+        # Cálculo del descuento
+        # Regla 1: Si total > 10 dólares, entonces tiene descuento
+        
+        # Regla 2: Si total < 10 pero > 9, y el producto es preferente, entonces tiene descuento
+        
         dscto = total * PORC_DSCTO
+
         dscto = dscto.quantize(CENT, rounding=ROUND_HALF_UP)
         total_menos_dscto = total - dscto
         iva = total_menos_dscto * PORC_IVA
         iva = iva.quantize(CENT, rounding=ROUND_HALF_UP)
         total_menos_dscto_mas_IVA = total_menos_dscto + iva
+
         # Presentación 
         if seleccion == 1:
             print(f"\t\tTotal: ${total}")
