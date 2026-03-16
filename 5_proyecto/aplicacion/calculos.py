@@ -1,5 +1,5 @@
 from decimal import Decimal, ROUND_HALF_UP
-from dominio.resultado import crear_resultado
+from dominio import Resultado
 
 # Constante para posición decimal
 CENT = Decimal("0.01")
@@ -30,15 +30,15 @@ def calcular_iva(valor, esta_exento):
         return iva.quantize(CENT, rounding = ROUND_HALF_UP)
 
 def calcular_venta(producto):
-    total = producto["cantidad"]  * producto["precio"] 
+    total = producto.stock  * producto.precio
     dscto = calcular_dscto(
-        producto["cantidad"], 
-        producto["precio"], 
-        producto["esta_promocion"])
+        producto.stock, 
+        producto.precio, 
+        producto.esta_de_promocion)
     total_sin_dscto = total - dscto
-    iva = calcular_iva(total_sin_dscto, producto["esta_exento"])
+    iva = calcular_iva(total_sin_dscto, producto.esta_exento_iva)
     total_sin_dscto_mas_IVA = total_sin_dscto + iva
-    return crear_resultado(
+    return Resultado(
             total, 
             dscto, 
             iva, 

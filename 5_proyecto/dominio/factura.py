@@ -1,4 +1,4 @@
-class factura:
+class Factura:
     def __init__(self,
                  numero,
                  fecha,

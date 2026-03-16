@@ -14,31 +14,30 @@ def presentar_menu():
     print("--------------------------------------------------")
 
 def presentar_producto(producto):
-    print("Datos del producto")
-    print(f"{producto["codigo"]} : "
-          f"{producto["nombre"]} - "
-          f"{producto["cantidad"]} und. - "
-          f"${producto["precio"]}" )
+    print(f"{producto.codigo} : "
+          f"{producto.nombre} - "
+          f"{producto.stock} und. - "
+          f"${producto.precio}" )
 
 def presentar_reporte(producto, resultados):
     presentar_producto(producto)
-    print(f"\tTotal: \t\t\t{resultados["total"]}")
-    print(f"\tDscto 10%: \t\t{resultados["dscto"]}")
-    print(f"\tTotal - Dscto: \t\t{resultados["total_sin_dscto"]}")
-    print(f"\tIVA: \t\t\t{resultados["iva"]}")
-    print(f"\tTotal - Dscto + IVA: \t{resultados["total_sin_dscto_mas_IVA"]}")
+    print(f"\tTotal: \t\t\t{resultados.total}")
+    print(f"\tDscto 10%: \t\t{resultados.dscto}")
+    print(f"\tTotal - Dscto: \t\t{resultados.total_sin_dscto}")
+    print(f"\tIVA: \t\t\t{resultados.iva}")
+    print(f"\tTotal - Dscto + IVA: \t{resultados.total_sin_dscto_mas_IVA}")
 
 
 def presentar_menu_seleccion(seleccion, producto, resultados):
     print("------------------------")
     if seleccion == 1:
-        print(f"\t\tTotal: ${resultados["total"]}")
+        print(f"\t\tTotal: ${resultados.total}")
     if seleccion == 2:
-        print(f"\t\tDescuento: ${resultados["dscto"]}")
+        print(f"\t\tDescuento: ${resultados.dscto}")
     if seleccion == 3:
-        print(f"\t\tIVA: ${resultados["iva"]}")
+        print(f"\t\tIVA: ${resultados.iva}")
     if seleccion == 4:
-        print(f"\t\tTotal - Dscto + IVA: ${resultados["total_sin_dscto_mas_IVA"]}")
+        print(f"\t\tTotal - Dscto + IVA: ${resultados.total_sin_dscto_mas_IVA}")
     if seleccion == 5:
         presentar_reporte(producto, resultados)
     if seleccion == 0:

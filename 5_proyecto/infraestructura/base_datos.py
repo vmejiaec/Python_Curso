@@ -1,11 +1,11 @@
-from dominio import producto
+from dominio import Producto
 from decimal import Decimal
 
 def productos_lista_inicial():
     lista = [
-        producto('P010', 'Silla', 'C01', 100, Decimal('23.33')),
-        producto('P010', 'Mesa' , 'C01',  20, Decimal('123.50')),
-        producto('P010', 'Tasa' , 'C02',  30, Decimal('3.39')),
-        producto('P010', 'Vaso' , 'C02',  60, Decimal('1.89'))
+        Producto('P011', 'Silla', 'C01', 100, Decimal('23.33')),
+        Producto('P012', 'Mesa' , 'C01',  20, Decimal('123.50')),
+        Producto('P013', 'Tasa' , 'C02',  30, Decimal('3.39')),
+        Producto('P014', 'Vaso' , 'C02',  60, Decimal('1.89'))
     ]
     return lista
