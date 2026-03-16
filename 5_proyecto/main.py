@@ -2,10 +2,12 @@
 from interfaz.salida import presentar_menu, presentar_producto,presentar_reporte, presentar_menu_seleccion
 from interfaz.entrada import ingresar_producto
 from aplicacion.calculos import calcular_venta
+from infraestructura import base_datos
 
 def main():
 
-    lista_productos = []
+    lista_productos = base_datos.productos_lista_inicial()
+    
     continua = "S"
     while continua != "N":
         producto = ingresar_producto()
